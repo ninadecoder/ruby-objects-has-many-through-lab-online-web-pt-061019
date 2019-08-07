@@ -23,8 +23,8 @@ class Doctor
     Appointment.new(date, patient, self)
   end
   
-  # def patients
-  #   self.patients.collect {|patient| patient.doctor == self}
-  # end
+  def patients
+     appointments.collect(|appointment| appointment.patient)
+  end
   
 end
