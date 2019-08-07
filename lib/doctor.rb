@@ -1,3 +1,5 @@
+require 'pry'
+
 class Doctor
   
   attr_accessor :name
@@ -18,11 +20,11 @@ class Doctor
   end
   
   def new_appointment(date, patient)
-    Appointment.new(date, self, patient)
+    Appointment.new(date, patient, self)
   end
   
   def patients
-    self.appointments.collect {|appointment| appointment.patient}
+    self.patients.collect {|patient| patient.doctor == self}
   end
   
 end
